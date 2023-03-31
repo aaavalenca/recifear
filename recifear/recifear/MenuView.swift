@@ -13,19 +13,17 @@ struct MenuView: View {
     
     @State var selectedCard : String = "experiencias"
     
-    let cardInfos = [
-        ["experiencias", "Experiências"],
-        ["comousar", "Como usar o app"]
-    ]
+    
+    @StateObject var viewModel = CardViewArrayModel()
     
     var body: some View {
         NavigationStack {
             HStack{
                 VStack{
-                    ForEach(cardInfos, id: \.self) { cardInfo in
-                        CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
+                    ForEach(viewModel.cardInfos, id: \.id) { cardInfo in
+                        CardView(cardImage: cardInfo.image, cardText: cardInfo.text)
                             .onTapGesture {
-                                selectedCard = cardInfo[0]
+                                selectedCard = cardInfo.text
                             }
                         
                     }.listStyle(SidebarListStyle())
@@ -69,7 +67,7 @@ struct ExperienceView : View {
                     LongCardView(longCardImage: longCardInfos[0][0], longTitle: longCardInfos[0][1], longSubtitle: longCardInfos[0][2])
                 }
                 .navigationTitle(showBuildingRecife ? "Voltar ao menu" : "")
-               
+                
                 NavigationLink(destination: HowToUseView()) {
                     LongCardView(longCardImage: longCardInfos[1][0], longTitle: longCardInfos[1][1], longSubtitle: longCardInfos[1][2])
                 }
@@ -111,7 +109,7 @@ struct HowToUseView : View {
             }
             
         }
-       
+        
     }
 }
 
@@ -143,128 +141,7 @@ struct DescriptionView : View {
     }
 }
 
-struct CardView: View {
-    let cardImage: String
-    let cardText: String
-    
-    var body: some View {
-        VStack(alignment: .leading){
-            Image(cardImage)
-                .resizable()
-                .frame(width: 258, height: 142)
-            
-            Text(cardText)
-        }
-    }
-}
 
-struct LongCardView: View {
-    let longCardImage: String
-    let longTitle: String
-    let longSubtitle: String
-    
-    var body: some View {
-        ZStack(alignment: .leading ) {
-            Image(longCardImage)
-                .resizable()
-                .frame(width: 737, height: 246)
-            
-            VStack(alignment: .leading){
-                Text(longTitle)
-                Text(longSubtitle)
-            }.padding(.leading, 24)
-                .padding(.top, 160)
-      
-        }.padding(.top, 20)
-            .background(Color.orange)
-    }
-}
-
-struct HowToCardView: View {
-    let howToCardImage: String
-    let howToRetanguloImage: String
-    let howToTitle: String
-   
-    
-    var body: some View {
-        
-        
-        
-        VStack(alignment: .leading, spacing: 0) {
-            
-            Image(howToCardImage)
-                .resizable()
-                .frame(width: 343, height: 168)
-            
-            ZStack {
-                Image(howToRetanguloImage).resizable().frame(width: 343, height: 72)
-                
-                Text(howToTitle)
-                    .frame(maxWidth:333, alignment: .leading)
-//                    .padding(.leading, 24)
-//                        .padding(.top, 160)
-            }
-            
-         
-            
-        }
-    }
-    
-    
-    
-    
-    
-    
-}
-
-
-
-
-
-
-//struct SplitView: View {
-//
-//    @State var selected: Int? = nil
-//
-//    var body: some View {
-//        HStack {
-//            List(0...10, id: \.self, selection: $selected) { number in
-//                HStack {
-//                    Text("Select \(number)")
-//                    Spacer()
-//                }
-//                .background(number == selected ? highlightColor : nil)
-//                .contentShape(Rectangle())
-//                .onTapGesture {
-//                    selected = number
-//                }
-//            }
-//            .frame(width: 200)
-//            .listStyle(SidebarListStyle())
-//
-//            Spacer()
-//            detailView
-//            Spacer()
-//        }
-//
-//    }
-//
-//    @ViewBuilder var detailView: some View {
-//        if selected == nil {
-//            Text("Nothing is selected")
-//        } else {
-//            Text("\(selected!) is selected")
-//        }
-//    }
-//
-//    var highlightColor: some View {
-//        Color.accentColor
-//            .opacity(0.8)
-//            .cornerRadius(10)
-//            .frame(height: 40)
-//            .frame(minWidth: 150, maxWidth: 200)
-//    }
-//}
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
