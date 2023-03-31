@@ -23,6 +23,8 @@
 		938874CD29D77487003AB6D9 /* HowToCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938874CC29D77487003AB6D9 /* HowToCardView.swift */; };
 		938874CF29D774A2003AB6D9 /* LongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938874CE29D774A2003AB6D9 /* LongCardView.swift */; };
 		938874D229D77610003AB6D9 /* CardViewArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938874D129D77610003AB6D9 /* CardViewArrayModel.swift */; };
+		938874D429D778B9003AB6D9 /* LongCardInfosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938874D329D778B9003AB6D9 /* LongCardInfosModel.swift */; };
+		938874D629D779DD003AB6D9 /* LongCardViewArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938874D529D779DD003AB6D9 /* LongCardViewArrayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		938874CC29D77487003AB6D9 /* HowToCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToCardView.swift; sourceTree = "<group>"; };
 		938874CE29D774A2003AB6D9 /* LongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongCardView.swift; sourceTree = "<group>"; };
 		938874D129D77610003AB6D9 /* CardViewArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewArrayModel.swift; sourceTree = "<group>"; };
+		938874D329D778B9003AB6D9 /* LongCardInfosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongCardInfosModel.swift; sourceTree = "<group>"; };
+		938874D529D779DD003AB6D9 /* LongCardViewArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongCardViewArrayModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				938874C729D77337003AB6D9 /* CardInfosModel.swift */,
+				938874D329D778B9003AB6D9 /* LongCardInfosModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				938874D129D77610003AB6D9 /* CardViewArrayModel.swift */,
+				938874D529D779DD003AB6D9 /* LongCardViewArrayModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,9 +208,11 @@
 			files = (
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
+				938874D629D779DD003AB6D9 /* LongCardViewArrayModel.swift in Sources */,
 				938874CF29D774A2003AB6D9 /* LongCardView.swift in Sources */,
 				938874C829D77337003AB6D9 /* CardInfosModel.swift in Sources */,
 				8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */,
+				938874D429D778B9003AB6D9 /* LongCardInfosModel.swift in Sources */,
 				8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */,
 				8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */,
 				938874CD29D77487003AB6D9 /* HowToCardView.swift in Sources */,

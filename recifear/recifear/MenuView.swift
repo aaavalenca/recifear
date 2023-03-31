@@ -46,14 +46,14 @@ struct MenuView: View {
 
 
 struct ExperienceView : View {
-    let longCardInfos = [
-        ["montandorecife", "Montando Recife", "Crie o Recife dos seus sonhos"],
-        ["comousar", "Montando Recife 2", "Crie o Recife dos seus sonhos2"]
-    ]
+    
+    @State var longModel = LongCardViewArrayModel()
     
     @State var showBuildingRecife = false
     
     var body : some View {
+        
+       
         VStack(alignment: .leading) {
             Text("Experiências")
                 .font(.system(size: 40))
@@ -62,18 +62,26 @@ struct ExperienceView : View {
                 .padding(.bottom, 30)
                 .background(Color.cyan)
             
-            VStack {
-                NavigationLink(destination: DescriptionView(), isActive: $showBuildingRecife) {
-                    LongCardView(longCardImage: longCardInfos[0][0], longTitle: longCardInfos[0][1], longSubtitle: longCardInfos[0][2])
+            NavigationStack {
+                VStack {
+                    NavigationLink(destination: DescriptionView()) {
+                            ForEach(longModel.longCardInfos, id: \.id) { longCardInfo in
+                                LongCardView(longCardImage: longCardInfo.image, longTitle: longCardInfo.title, longSubtitle: longCardInfo.subtitle)
+                            }
+                        }
+                    
+                    
+                    NavigationLink(destination: HowToUseView()) {
+                        ForEach(longModel.longCardInfos, id: \.id) { longCardInfo in
+                            LongCardView(longCardImage: longCardInfo.image, longTitle: longCardInfo.subtitle, longSubtitle: longCardInfo.subtitle)
+                        }
+                        
+                    }
                 }
-                .navigationTitle(showBuildingRecife ? "Voltar ao menu" : "")
-                
-                NavigationLink(destination: HowToUseView()) {
-                    LongCardView(longCardImage: longCardInfos[1][0], longTitle: longCardInfos[1][1], longSubtitle: longCardInfos[1][2])
-                }
-            }
+            }.navigationTitle(showBuildingRecife ? "Voltar ao menu" : "")
         }
-    }
+        }
+    
 }
 
 
@@ -114,10 +122,13 @@ struct HowToUseView : View {
 }
 
 struct DescriptionView : View {
+    
     @State var showExperience = false
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             HStack{
+                
                 VStack{
                     Text("Montando o Recife")
                     
