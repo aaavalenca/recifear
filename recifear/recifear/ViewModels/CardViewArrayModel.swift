@@ -17,3 +17,4 @@ class CardViewArrayModel: ObservableObject {
         
     }
 }
+
