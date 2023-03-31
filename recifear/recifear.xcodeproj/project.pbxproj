@@ -67,7 +67,7 @@
 		8AA8F1F029CB0F67002B1333 /* recifear */ = {
 			isa = PBXGroup;
 			children = (
-				938874C629D772BA003AB6D9 /* New Group */,
+				938874C629D772BA003AB6D9 /* Models */,
 				8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */,
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
 				8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */,
@@ -91,12 +91,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		938874C629D772BA003AB6D9 /* New Group */ = {
+		938874C629D772BA003AB6D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				938874C729D77337003AB6D9 /* CardInfosModel.swift */,
 			);
-			path = "New Group";
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
