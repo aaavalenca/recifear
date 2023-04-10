@@ -11,6 +11,8 @@
 		3079DF0829DDA7A300E5E7FE /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */; };
 		30D3A66029D30F20005FA23F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3A65F29D30F20005FA23F /* MenuView.swift */; };
 		8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A19783B29CCDFAC004B7466 /* predio.usdz */; };
+		8A38A3F529E47F6D0065D465 /* historico.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A38A3F429E47F6D0065D465 /* historico.usdz */; };
+		8A38A3F829E480A90065D465 /* palafita.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A38A3F729E480A90065D465 /* palafita.usdz */; };
 		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
 		8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */; };
 		8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */; };
@@ -21,7 +23,6 @@
 		8AA8F1FB29CB0F68002B1333 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F1FA29CB0F68002B1333 /* Preview Assets.xcassets */; };
 		8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F20129CB0FA0002B1333 /* ARModel.swift */; };
 		8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */; };
-		8AA8F20729CB0FEF002B1333 /* historico.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20529CB0FEF002B1333 /* historico.usdz */; };
 		8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20629CB0FEF002B1333 /* barraco.usdz */; };
 		8AD0347A29DC9C2B00BAA247 /* Obviously-Variable.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AD0347929DC9C2B00BAA247 /* Obviously-Variable.otf */; };
 		93C2615529DB5E8B001BBFA9 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2615429DB5E8B001BBFA9 /* LargeButton.swift */; };
@@ -34,6 +35,8 @@
 		3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		30D3A65F29D30F20005FA23F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8A19783B29CCDFAC004B7466 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
+		8A38A3F429E47F6D0065D465 /* historico.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = historico.usdz; sourceTree = "<group>"; };
+		8A38A3F729E480A90065D465 /* palafita.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = palafita.usdz; sourceTree = "<group>"; };
 		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
 		8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuldingInfoModel.swift; sourceTree = "<group>"; };
 		8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewModel.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		8AA8F1FA29CB0F68002B1333 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AA8F20129CB0FA0002B1333 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
-		8AA8F20529CB0FEF002B1333 /* historico.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = historico.usdz; sourceTree = "<group>"; };
 		8AA8F20629CB0FEF002B1333 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
 		8AD0347329DC977B00BAA247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8AD0347929DC9C2B00BAA247 /* Obviously-Variable.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Obviously-Variable.otf"; sourceTree = "<group>"; };
@@ -65,6 +67,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A38A3F629E47F740065D465 /* 3DAssets */ = {
+			isa = PBXGroup;
+			children = (
+				8AA8F20629CB0FEF002B1333 /* barraco.usdz */,
+				8A38A3F729E480A90065D465 /* palafita.usdz */,
+				8A38A3F429E47F6D0065D465 /* historico.usdz */,
+				8A19783B29CCDFAC004B7466 /* predio.usdz */,
+			);
+			path = 3DAssets;
+			sourceTree = "<group>";
+		};
 		8AA8F1E529CB0F67002B1333 = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +97,11 @@
 		8AA8F1F029CB0F67002B1333 /* recifear */ = {
 			isa = PBXGroup;
 			children = (
-				8AD0347329DC977B00BAA247 /* Info.plist */,
 				8AD0347029DC96E300BAA247 /* Fonts */,
+				8A38A3F629E47F740065D465 /* 3DAssets */,
 				93C2615629DB777E001BBFA9 /* Views */,
 				93C2615229DB5D44001BBFA9 /* Models */,
+				8AA8F1F929CB0F68002B1333 /* Preview Content */,
 				8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */,
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
 				8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */,
@@ -96,12 +110,9 @@
 				8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */,
 				8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */,
 				8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */,
-				8AA8F20529CB0FEF002B1333 /* historico.usdz */,
-				8AA8F20629CB0FEF002B1333 /* barraco.usdz */,
-				8A19783B29CCDFAC004B7466 /* predio.usdz */,
 				8AA8F1F529CB0F67002B1333 /* Experience.rcproject */,
 				8AA8F1F729CB0F68002B1333 /* Assets.xcassets */,
-				8AA8F1F929CB0F68002B1333 /* Preview Content */,
+				8AD0347329DC977B00BAA247 /* Info.plist */,
 			);
 			path = recifear;
 			sourceTree = "<group>";
@@ -207,12 +218,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA8F20729CB0FEF002B1333 /* historico.usdz in Resources */,
 				8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */,
 				8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */,
 				8AA8F1FB29CB0F68002B1333 /* Preview Assets.xcassets in Resources */,
 				8AD0347A29DC9C2B00BAA247 /* Obviously-Variable.otf in Resources */,
+				8A38A3F829E480A90065D465 /* palafita.usdz in Resources */,
 				8AA8F1F829CB0F68002B1333 /* Assets.xcassets in Resources */,
+				8A38A3F529E47F6D0065D465 /* historico.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

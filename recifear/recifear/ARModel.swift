@@ -21,18 +21,24 @@ struct ARModel{
             fatalError("Missing expected asset catalog resources.")
         }
 
-        // CONFIGURA A REALITADE AUMENTADA PARA IDENTIFICAR IMAGENS 2D NO ESPAÇO
-//        let configuration = ARImageTrackingConfiguration()
-//        configuration.trackingImages = trackerImages
-//        configuration.maximumNumberOfTrackedImages = 20
-        
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = trackerImages
         configuration.maximumNumberOfTrackedImages = 0
-        arView.session.run(configuration)
+        arView.session.run(configuration, options: [ARSession.RunOptions.resetTracking, ARSession.RunOptions.removeExistingAnchors])
     }
 
 
+    func resetSession(){
+        guard let trackerImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
+            fatalError("Missing expected asset catalog resources.")
+        }
+
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.detectionImages = trackerImages
+        configuration.maximumNumberOfTrackedImages = 0
+        arView.session.run(configuration, options: [ARSession.RunOptions.resetTracking, ARSession.RunOptions.removeExistingAnchors])
+    }
+    
     // ENCONTRA AS IMAGENS NA CÂMERA
     mutating func imageRecognized(anchors: [ARAnchor]) {
         // PEGA TODAS AS IMAGENS DA CENA E ANCORA NUM LUGAR
@@ -45,12 +51,13 @@ struct ARModel{
             guard let imageAnchor = anchor as? ARImageAnchor else { return }
             var modelEntity = ModelEntity()
 
-            // CRIA O OBJETO 3D, e remove o número final da imagem pra chamar o model (TIRAR QUANDO TIVERMOS MODELS DIFERENTES)!!!!!
+            // CRIA O OBJETO 3D, e remove o número final da imagem pra chamar o model
             modelEntity = try! ModelEntity.loadModel(named: String(imageAnchor.name!).dropLast() + ".usdz")
             modelEntity.name = imageAnchor.name!
-
+            
             // COLOCA O OBJETO EM CIMA DA ÂNCORA
             placeConstruction(construction: modelEntity, imageAnchor: imageAnchor)
+                        
         }
     }
 
@@ -62,9 +69,6 @@ struct ARModel{
         // PODE MEXER NA ESCALA DO OBJETO 3D
         construction.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
 
-        if construction.name == "predio"{
-            construction.transform.scale = SIMD3<Float>(0.00035, 0.00035, 0.00035)
-        }
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
         construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
 
@@ -77,8 +81,11 @@ struct ARModel{
         // FUNÇÕES QUE ADICIONAM DE FATO NA CENA
         imageAnchorEntity.addChild(construction)
         arView.scene.addAnchor(imageAnchorEntity)
+        
     }
+    
 }
+
 
 extension ARView {
     func enableFindOutMore(){
@@ -104,21 +111,11 @@ extension ARView {
     }
 
     @objc func capScale(_ recognizer: EntityScaleGestureRecognizer){
-        if recognizer.entity?.name != "predio" {
-            if (recognizer.entity?.scale.x)! > 0.0002 {
-                recognizer.entity?.transform.scale = SIMD3<Float>(0.0002, 0.0002, 0.00020)
-            }
-            if (recognizer.entity?.scale.x)! < 0.0001 {
-                recognizer.entity?.transform.scale = SIMD3<Float>(0.0001, 0.0001, 0.0001)
-            }
-        }
-        else {
             if (recognizer.entity?.scale.x)! > 0.0004 {
                 recognizer.entity?.transform.scale = SIMD3<Float>(0.0004, 0.0004, 0.0004)
             }
             if (recognizer.entity?.scale.x)! < 0.00015 {
                 recognizer.entity?.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
             }
-        }
     }
 }

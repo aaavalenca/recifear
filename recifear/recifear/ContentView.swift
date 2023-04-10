@@ -9,20 +9,28 @@ import SwiftUI
 import RealityKit
 import ARKit
 
-
 struct ContentView : View {
     @StateObject var arViewModel : ARViewModel = ARViewModel()
     @ObservedObject var settings = Settings.shared
     let buildingInfoViewModel = BuildingInfoViewModel()
     @State var showBuildingInfo : Bool = true
     @State var opened : Bool = false
-
     
     var body: some View {
         ZStack(){
             HStack{
                 // INSTANCIA A VIEW PASSANDO COMO ARGUMENTO O VIEWMODEL, QUE SERÁ O CONTROLADOR
-                ARViewContainer(arViewModel: arViewModel)
+                ZStack{
+                    ARViewContainer(arViewModel: arViewModel)
+                    VStack{
+                        Spacer()
+                        Button("RESET"){
+                            arViewModel.resetSession()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(20)
+                    }
+                }
                 
                 Spacer()
                 
@@ -31,7 +39,6 @@ struct ContentView : View {
                                         buildingInfoViewModel.allInfos[settings.currentConstruction] ??
                                      BuildingInfoModel(bid: "", title: "???", description: "", impact: "", history: ""), opened: $opened)
                 }
-                
             }
         }
     }
@@ -41,10 +48,6 @@ class Settings: ObservableObject{
     static let shared = Settings()
     @Published var opened = false
     @Published var currentConstruction = ""
-//    @Published var shouldOpenHouseView = false
-//    @Published var shouldOpenShackView = false
-//    @Published var shouldOpenBuildingView = false
-//    @Published var shouldOpenStiltHouseView = false
 }
 
 // CRIA O VIEW MODEL (QUE CONTROLA O MODEL)
